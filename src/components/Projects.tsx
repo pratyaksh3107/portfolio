@@ -21,6 +21,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       description: 'Supervised machine learning project to predict house prices with data preprocessing, feature engineering, and model evaluation.',
       tech: ['Python', 'Pandas', 'Scikit-learn', 'ML'],
       featured: true,
+      githubUrl: 'https://github.com/pratyaksh3107/house-price-prediction',
     },
     {
       title: 'Library Management',
