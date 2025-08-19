@@ -17,9 +17,9 @@ interface Project {
 const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
   const projects: Project[] = [
     {
-      title: 'ATM Machine',
-      description: 'A comprehensive ATM simulation with user authentication, balance inquiry, and transaction history.',
-      tech: ['C++', 'OOP', 'File Handling'],
+      title: 'House Price Prediction',
+      description: 'Supervised machine learning project to predict house prices with data preprocessing, feature engineering, and model evaluation.',
+      tech: ['Python', 'Pandas', 'Scikit-learn', 'ML'],
       featured: true,
     },
     {
@@ -51,15 +51,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       description: 'Machine learning project with predictive analytics and data visualization.',
       tech: ['Python', 'ML', 'TensorFlow'],
       featured: true,
-    },
-    // New project entry - replace links and details with your real project
-    {
-      title: 'New Project',
-      description: 'A brief description of my latest project with a live demo and source code.',
-      tech: ['React', 'TypeScript'],
-      featured: true,
-      githubUrl: 'https://github.com/your-username/your-repo',
-      liveUrl: 'https://your-project-link.example.com',
     },
   ];
 
