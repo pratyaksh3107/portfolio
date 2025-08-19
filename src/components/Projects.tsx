@@ -22,6 +22,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       tech: ['Python', 'Pandas', 'Scikit-learn', 'ML'],
       featured: true,
       githubUrl: 'https://github.com/pratyaksh3107/house-price-prediction',
+      liveUrl: 'https://house-price-prediction-8gta4q5uz3qb86ffvx7sd4.streamlit.app/',
     },
     {
       title: 'Library Management',
