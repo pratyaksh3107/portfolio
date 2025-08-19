@@ -5,8 +5,17 @@ interface ProjectsProps {
   isDarkMode: boolean;
 }
 
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  featured: boolean;
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
 const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
-  const projects = [
+  const projects: Project[] = [
     {
       title: 'ATM Machine',
       description: 'A comprehensive ATM simulation with user authentication, balance inquiry, and transaction history.',
@@ -43,6 +52,15 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
       tech: ['Python', 'ML', 'TensorFlow'],
       featured: true,
     },
+    // New project entry - replace links and details with your real project
+    {
+      title: 'New Project',
+      description: 'A brief description of my latest project with a live demo and source code.',
+      tech: ['React', 'TypeScript'],
+      featured: true,
+      githubUrl: 'https://github.com/your-username/your-repo',
+      liveUrl: 'https://your-project-link.example.com',
+    },
   ];
 
   return (
@@ -68,12 +86,28 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
               <div className="flex items-center justify-between mb-4">
                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-[#ECEFF4]' : 'text-gray-900'}`}>{project.title}</h3>
                 <div className="flex gap-2">
-                  <button className={`p-2 rounded-full transition-colors ${isDarkMode ? 'hover:bg-[#64FFDA] hover:text-[#0A0E17]' : 'hover:bg-blue-600 hover:text-white'}`}>
-                    <Github className="w-4 h-4" />
-                  </button>
-                  <button className={`p-2 rounded-full transition-colors ${isDarkMode ? 'hover:bg-[#C792EA] hover:text-[#0A0E17]' : 'hover:bg-purple-600 hover:text-white'}`}>
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} GitHub repository`}
+                      className={`p-2 rounded-full transition-colors ${isDarkMode ? 'hover:bg-[#64FFDA] hover:text-[#0A0E17]' : 'hover:bg-blue-600 hover:text-white'}`}
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} live demo`}
+                      className={`p-2 rounded-full transition-colors ${isDarkMode ? 'hover:bg-[#C792EA] hover:text-[#0A0E17]' : 'hover:bg-purple-600 hover:text-white'}`}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
               
